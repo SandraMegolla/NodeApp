@@ -7,31 +7,30 @@
 </head>
 <body>
     <%- include('partials/head')%>
+    <%- include('partials/navbar')%>
     <%- include('partials/formulario')%>
     <%- include('partials/footer')%>
     <header>
       <h1>Registro</h1>
   </header>
-    <div class="container">
-        <h2>Registro</h2>
-        <form class="form" action="#" method="post">
-          <div class="form-group">
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
-          </div>
-          <div class="form-group">
-            <button type="submit">Registrar</button>
-          </div>
-        </form>
+  <div class="wrapper">
+    <form action="/insertUser" method="post">
+      <h1>Registro</h1>
+      <div class="input-box">
+        <input type="text" placeholder="Nombre de usuario" name="nameuser" required>
+        <i class='bx bxs-user'></i>
       </div>
+      <div class="input-box">
+        <input type="password" placeholder="contraseña" name="password" required>
+        <i class='bx bxs-lock-alt' ></i>
+      </div>
+      <div class="remember-forgot">
+        <label><input type="checkbox">Recuerdame</label>
+        <a href="https://www.youtube.com/results?search_query=contrase%C3%B1a+olvidada">Contraseña olvidada</a>
+      </div>
+      <button type="submit" class="btn">Registrate</button>
+    </form>
+  </div>
       <footer>
         <p>&copy; 2024 Reserva de Hoteles y Viajes</p>
     </footer>

@@ -19,6 +19,8 @@ console.log(join(__dirname,'views'));
 app.set('view engine','ejs');
 app.set('views',join(__dirname,'views'));
 
+app.use(express.urlencoded({extended: true}));
+
 
 //Configurar enrutador
 app.use(indexRoutes);
@@ -28,7 +30,7 @@ app.use(express.static(join(__dirname,'public')));
 
 //CREAMOS EL SERVIDOR
 app.listen(process.env.PORT || port)
-console.log("holaaa!")
+// console.log("holaaa!")
 console.log('Escuchando por el puerto '+port+'...')
 
 

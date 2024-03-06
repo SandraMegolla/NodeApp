@@ -1,0 +1,99 @@
+<!-- Vista: crud.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+        }
+        tbody tr {
+            margin-bottom: 10px;
+        }
+        button[type="submit"], input[type="submit"] {
+            background-color: #4CAF50; /* Color de fondo verde */
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+
+        button[type="submit"]:hover, input[type="submit"]:hover {
+            background-color: #45a049; /* Cambia el color de fondo al pasar el ratón */
+        }
+        input[type="text"], input[type="password"] {
+            width: 95%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        td input[type="text"], td input[type="password"] {
+            width: calc(100% - 12px); /* Para tener en cuenta el padding */
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Usuarios CRUD</h1>
+    </header>
+    <%- include('partials/head')%>
+
+    <%- include('partials/navbar')%>
+    <%- include('partials/footer')%>
+
+    <h1>CRUD</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre de usuario</th>
+                <th>Contraseña</th>
+                <th>Actualizar y eliminar usuarios</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(user => { %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><input type="text" name="newName" value="<%= user.nameuser %>"></td>
+                    <td><input type="password" name="newPassword" value="<%= user.password %>"></td>
+                    <td>
+                        <form action="/actualizar/<%= user.id %>" method="POST">
+                            <input type="text" name="newName" placeholder="Nuevo nombre de usuario">
+                            <input type="password" name="newPassword" placeholder="Nueva contraseña">
+                            <button type="submit">Actualizar</button>
+                        </form>
+                        
+                        <form action="/eliminar/<%= user.id %>" method="post" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este usuario?');">
+                            <input type="submit" value="Eliminar">
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <footer>
+        <p >&copy; 2024 Reserva de Hoteles y Viajes</p>
+    </footer>
+</body>
+</html>

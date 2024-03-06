@@ -1,6 +1,6 @@
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: rgba(236, 221, 140, 0.7); /* Marrón claro con menos opacidad */
+    color: #fff; /* Color de texto */
     text-align: center;
     padding: 10px;
     position: fixed;

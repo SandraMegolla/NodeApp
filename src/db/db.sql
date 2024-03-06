@@ -8,6 +8,6 @@ create table user(
     password VARCHAR(255) NOT NULL
 );
 
-insert USER (nameuser,password) values ('SARA','1414')
+insert USER (nameuser,password) values ('sssss','1414')
 
 select * from user

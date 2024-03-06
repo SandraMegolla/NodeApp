@@ -3,34 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title><%=title%></title>
 </head>
 <body>
 
     <%- include('partials/head')%>
+    <%- include('partials/navbar')%>
     <%- include('partials/formulario')%>
+    <%- include('partials/footer')%>
 
       <header>
           <h1>Login</h1>
       </header>
   
-      <p style="margin-left: 870px;">Bienvenido al login!</p>
-  
-  <div class="container">
-    <h2>Iniciar Sesión</h2>
-    <form class="form" action="#" method="post">
-      <div class="form-group">
-        <label for="username">Usuario:</label>
-        <input type="text" id="username" name="username" required>
+      <div class="wrapper">
+        <form action="/comprobarUser" method="post">
+          <h1>Login</h1>
+          <div class="input-box">
+            <input type="text" placeholder="Nombre usuario" name="nameuser" required>
+            <i class='bx bxs-user'></i>
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="contraseña" name="password" required>
+            <i class='bx bxs-lock-alt' ></i>
+          </div>
+          <div class="remember-forgot">
+            <label><input type="checkbox">Remember Me</label>
+            <a href="https://www.youtube.com/results?search_query=contrase%C3%B1a+olvidada">Contraseña olvidada</a>
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <div class="register-link">
+            <p>No tienes cuenta? <a href="/registro">Registrate</a></p>
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
-      </div>
-      <div class="form-group">
-        <button type="submit">Iniciar Sesión</button>
-      </div>
-    </form>
-  </div>
+      <footer>
+        <p>&copy; 2024 Reserva de Hoteles y Viajes</p>
+    </footer>
 </body>
 </html>

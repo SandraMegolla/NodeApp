@@ -14,43 +14,55 @@
 
     <%- include('partials/navbar')%>
     <%- include('partials/footer')%>
-    <div class="carousel-container">
-        <div class="carousel">
-            <div class="slide">
-                <img src="./img/sevilla.jpg" alt="Destino 1">
-                <div class="description">Viaja a Sevilla desde <b>299,92€</b></div>
-            </div>
-            <div class="slide">
-                <img src="./img/madrid.jpg" alt="Destino 2">
-                <div class="description">Viaja a madrid desde <b>348,92€</b></div>
-            </div>
-            <div class="slide">
-                <img src="./img/barcelona.jpg" alt="Destino 3">
-                <div class="description">Viaja a Barcelona desde <b>329,92€</b></div>
+    <div class="main-content">
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="slide">
+                    <img src="./img/sevilla.jpg" alt="Destino 1">
+                    <div class="description">Viaja a Sevilla desde <b>299,92€</b></div>
+                </div>
+                <div class="slide">
+                    <img src="./img/madrid.jpg" alt="Destino 2">
+                    <div class="description">Viaja a madrid desde <b>348,92€</b></div>
+                </div>
+                <div class="slide">
+                    <img src="./img/barcelona.jpg" alt="Destino 3">
+                    <div class="description">Viaja a Barcelona desde <b>329,92€</b></div>
+                </div>
             </div>
         </div>
+
+        <section id="reservation" class="py-30">
+            <div class="container">
+            <h2>Haz tu reserva hoy mismo!</h2>
+                <a href="https://www.booking.com/index.es.html?aid=2311236;label=es-es-booking-desktop-onknyt5TBrS8m9RnGd*6fgS652829001115:pl:ta:p1:p2:ac:ap:neg:fi:tikwd-65526620:lp1005421:li:dec:dm;ws=&gad_source=1&gclid=CjwKCAiAxaCvBhBaEiwAvsLmWII2EGn-ZTgyGM38E66GTkm8Qpoiw9tTEbRqAOn8c7WS5pbPkpe3hBoCbHgQAvD_BwE" class="btn btn-dark">
+                    Haz la reserva
+                </a>
+            </div>
+        </section>
     </div>
-    <script>
-        var currentIndex = 0;
-        var slides = document.querySelectorAll('.slide');
-        var totalSlides = slides.length;
+        
+        <script>
+            var currentIndex = 0;
+            var slides = document.querySelectorAll('.slide');
+            var totalSlides = slides.length;
 
-        function showSlide(index) {
-            slides.forEach(function(slide) {
-                slide.style.display = 'none';
-            });
-            slides[index].style.display = 'block';
-        }
+            function showSlide(index) {
+                slides.forEach(function(slide) {
+                    slide.style.display = 'none';
+                });
+                slides[index].style.display = 'block';
+            }
 
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            showSlide(currentIndex);
-        }
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                showSlide(currentIndex);
+            }
 
-        setInterval(nextSlide, 3000); // Cambia de imagen cada 3 segundos
-    </script>
-    <footer>
-        <p>&copy; 2024 Reserva de Hoteles y Viajes</p>
-    </footer>
+            setInterval(nextSlide, 3000); // Cambia de imagen cada 3 segundos
+        </script>
+        <footer>
+            <p >&copy; 2024 Reserva de Hoteles y Viajes</p>
+        </footer>
 </body>
 </html>
